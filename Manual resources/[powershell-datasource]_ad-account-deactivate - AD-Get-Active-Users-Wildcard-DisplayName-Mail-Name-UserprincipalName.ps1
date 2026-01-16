@@ -19,6 +19,11 @@ $propertiesToSelect = @(
     "ObjectGuid"
 ) # Properties to select from Microsoft AD, comma separated
 
+# Set debug logging
+$VerbosePreference = "SilentlyContinue"
+$InformationPreference = "Continue"
+$WarningPreference = "Continue"
+
 try {
     #region Searching user
     $actionMessage = "searching AD account(s) with the value entered [$($searchValue)]"
