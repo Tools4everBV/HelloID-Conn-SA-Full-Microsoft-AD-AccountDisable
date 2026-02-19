@@ -1,7 +1,7 @@
 # HelloID-Conn-SA-Full-Microsoft-AD-AccountDisable
 
-| :information_source: Information |
-| :------------------------------- |
+| :information_source: Information                                                                                                                                                                                                                                                                                                                                                          |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | This repository contains the connector and configuration code only. The implementer is responsible for acquiring the connection details such as username, password, certificate, etc. You might even need to sign a contract or agreement with the supplier before implementing this connector. Please contact the client's application manager to coordinate the connector requirements. |
 
 ## Description
@@ -9,7 +9,7 @@ _HelloID-Conn-SA-Full-Microsoft-AD-AccountDisable_ is a template designed for us
 
 By using this delegated form, you can disable AD users. The following options are available:
  1. Search and select the user
- 2. User is disabled in AD
+ 2. Disable the user in AD
 
 ## Getting started
 ### Requirements
@@ -24,9 +24,9 @@ By using this delegated form, you can disable AD users. The following options ar
 
 The following global variables are used by the connector.
 
-| Variable | Description | Mandatory |
-| -------- | ---------------------------------- | --------- |
-| ADusersSearchOU | The organizational units (OUs) to search for disabled AD users. Multiple OUs can be specified separated by semicolons (;) | Yes |
+| Variable        | Description                                                                                                               | Mandatory |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------- | --------- |
+| ADusersSearchOU | The organizational units (OUs) to search for disabled AD users. Multiple OUs can be specified separated by semicolons (;) | Yes       |
 
 ## Remarks
 
@@ -41,10 +41,10 @@ The following global variables are used by the connector.
 
 The following PowerShell cmdlets are used by the connector:
 
-| Cmdlet | Description |
-| -------- | ------------------------- |
-| `Get-ADUser` | Retrieve active user accounts from Active Directory |
-| `Disable-ADAccount` | Disable user accounts in Active Directory |
+| Cmdlet              | Description                                         |
+| ------------------- | --------------------------------------------------- |
+| `Get-ADUser`        | Retrieve active user accounts from Active Directory |
+| `Disable-ADAccount` | Disable user accounts in Active Directory           |
 
 ### Documentation
 

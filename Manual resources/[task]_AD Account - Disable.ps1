@@ -10,22 +10,18 @@ try {
     $actionMessage = "disabling AD account for user [$($user.userPrincipalName)] with objectguid [$($user.ObjectGuid)]"
 
     Disable-ADAccount -Identity $user.ObjectGuid
-    	
-    Write-verbose -verbose "Successfully disabled AD user [$($user.userPrincipalName)] with objectguid [$($user.ObjectGuid)]"
 
     $Log = @{
         Action            = "DisableAccount" # optional. ENUM (undefined = default) 
         System            = "ActiveDirectory" # optional (free format text) 
-        Message           = "Disabled AD user [$($user.userPrincipalName)] with objectguid [$($user.ObjectGuid)]" # required (free format text) 
+        Message           = "Disabled AD account: [$($user.userPrincipalName)] with objectguid [$($user.ObjectGuid)]" # required (free format text) 
         IsError           = $false # optional. Elastic reporting purposes only. (default = $false. $true = Executed action returned an error) 
         TargetDisplayName = $user.userPrincipalName # optional (free format text) 
         TargetIdentifier  = $user.ObjectGuid # optional (free format text) 
     }
     Write-Information -Tags "Audit" -MessageData $log
-
 }
 catch {
-
     $ex = $PSItem
     $auditMessage = "Error $($actionMessage). Error: $($ex.Exception.Message)"
     $warningMessage = "Error at Line [$($ex.InvocationInfo.ScriptLineNumber)]: $($ex.InvocationInfo.Line). Error: $($ex.Exception.Message)"
@@ -42,4 +38,3 @@ catch {
     Write-Warning $warningMessage   
     Write-Error $auditMessage
 }
-
