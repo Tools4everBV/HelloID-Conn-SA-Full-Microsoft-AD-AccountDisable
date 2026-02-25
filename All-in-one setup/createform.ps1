@@ -21,7 +21,7 @@ $tmpName = @'
 AdUsersEnabledSearchOu
 '@ 
 $tmpValue = @'
-DC=enyoi,DC=org
+OU=Users,OU=enyoi,DC=enyoi,DC=local;OU=UsersLite,OU=enyoi,DC=enyoi,DC=local
 '@ 
 $globalHelloIDVariables.Add([PSCustomObject]@{name = $tmpName; value = $tmpValue; secret = "False"});
 
